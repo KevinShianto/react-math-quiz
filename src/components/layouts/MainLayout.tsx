@@ -5,7 +5,7 @@ export type MainLayoutProps = {
 };
 
 const MainLayout = ({ children }: MainLayoutProps) => {
-  return <div className="w-screen h-screen bg-primary-content">{children}</div>;
+  return <div className="w-screen h-screen bg-base-100">{children}</div>;
 };
 
 export default MainLayout;

@@ -1,7 +1,8 @@
 import React from "react";
 import MainLayout from "./components/layouts/MainLayout";
-import MainMenu from "./components/games/MainMenu";
-import Loading from "./components/games/Loading";
+import MainMenu from "./components/screens/MainMenu";
+import Loading from "./components/screens/Loading";
+import GameScreen from "./components/screens/GameScreen";
 
 type GamePage = "main-menu" | "game" | "result" | "loading";
 
@@ -21,6 +22,8 @@ function App() {
         <MainMenu onClick={() => changePage("game")} />
       ) : page === "loading" ? (
         <Loading />
+      ) : page == "game" ? (
+        <GameScreen />
       ) : (
         <></>
       )}
