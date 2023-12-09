@@ -11,5 +11,6 @@ export const generateQuestion = () => {
 };
 
 export const checkQuestionAnswer = (fullQuestion: string, answer: number) => {
-  return eval(fullQuestion) == answer;
+  // eslint-disable-next-line
+  return eval(fullQuestion) === answer;
 };

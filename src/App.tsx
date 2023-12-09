@@ -22,7 +22,7 @@ function App() {
         <MainMenu onClick={() => changePage("game")} />
       ) : page === "loading" ? (
         <Loading />
-      ) : page == "game" ? (
+      ) : page === "game" ? (
         <GameScreen />
       ) : (
         <></>

@@ -29,7 +29,7 @@ const GameScreen = () => {
 
   useEffect(() => {
     timer.start();
-  }, []);
+  }, [timer]);
 
   const handleAnswerChange = (answer: number) => {
     const result = checkQuestionAnswer(
@@ -44,10 +44,6 @@ const GameScreen = () => {
     setScore((score) => score + 1);
     setWrongAnswer(false);
     setQuestion(generateQuestion());
-  };
-
-  const countTimer = () => {
-    setInterval(() => {}, 1000);
   };
 
   return (
