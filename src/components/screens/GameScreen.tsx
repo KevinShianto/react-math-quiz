@@ -7,7 +7,11 @@ import {
 import Answer from "../games/quiz/Answer";
 import { useTimer } from "react-use-precision-timer";
 
-const GameScreen = () => {
+export type GameScreenProps = {
+  onFinish: (score: number) => void;
+};
+
+const GameScreen = ({ onFinish }: GameScreenProps) => {
   const [question, setQuestion] = React.useState(generateQuestion());
   const [score, setScore] = React.useState(0);
   const [timeLeft, setTimeLeft] = React.useState(30000); // in milliseconds
@@ -23,6 +27,7 @@ const GameScreen = () => {
       if (timeLeft <= 0) {
         setTimeLeft(0);
         timer.stop();
+        onFinish(score);
       }
     }
   );
@@ -51,7 +56,7 @@ const GameScreen = () => {
       <div className="hero-content text-center max-w-full gap-20 flex-col">
         {/* Header */}
         <div className="flex text-neutral-content place-content-around w-full">
-          {/* Todo: timer */}
+          {/* timer */}
           <div className="flex flex-col">
             <div className="text-md">Timer:</div>
             <div className="text-8xl">{(timeLeft / 1000).toFixed(0)}</div>
