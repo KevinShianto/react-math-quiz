@@ -2,6 +2,8 @@
 
 Made with ReactJS with Typescript.
 
+[Live demo](https://kevinshianto.github.io/react-math-quiz/)
+
 ## Installation
 
 ```bash
